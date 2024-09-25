@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Cadastro</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form-image">
+            <img src="undraw_reading_time_re_phf7.svg" alt="Ilustração">
+        </div>
+
+        <div class="form">
+            <form action="#">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Criar uma conta</h1>
+                    </div>
+            <div class="input-group">   
+            <div class="input-box">
+                <label for="firstname">Nome:</label>
+                <input id="firstname" type="text" name="firstname" placeholder="Digite seu Nome">
+            </div>
+            
+            <div class="input-box">
+                <label for="lastname">Sobrenome:</label>
+                <input id="lastname" type="text" name="lastname" placeholder="Digite seu Sobrenome">
+            </div>
+            
+            <div class="input-box">
+                <label for="cpf">CPF:</label>
+                <input id="cpf" type="text" name="cpf" placeholder="Digite seu CPF">
+            </div>
+            
+            <div class="input-box">
+                <label for="email">E-mail:</label>
+                <input id="email" type="email" name="email" placeholder="Digite o seu E-mail">
+            </div>
+            
+            <div class="input-box">
+                <label for="password">Senha:</label>
+                <input id="password" type="password" name="password" placeholder="Digite sua senha">
+            </div>
+    
+            <div class="input-box">
+                <label for="confirmpassword">Confirme sua senha:</label>
+                <input id="confirmpassword" type="password" name="confirmpassword" placeholder="Confirme sua senha">
+            </div>
+
+            <div class="input-box">
+                <label for="gender">Gênero:</label>
+                <select id="gender" name="gender">
+                    <option value="female">Feminino</option>
+                    <option value="male">Masculino</option>
+                    <option value="other">Outros</option>
+                    <option value="prefer-not-to-say">Prefiro não dizer</option>
+                </select>
+            </div>
+
+            <div class="input-box" id="custom-gender" style="display: none;">
+                <label for="custom-gender-input">Especifique o gênero</label>
+                <input id="custom-gender-input" type="text" name="custom-gender" placeholder="Digite o seu gênero">
+            </div>
+
+            <div class="registra-button">
+              <button><a href="/Login/index.html">Registrar</a></button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Exibir o campo de gênero personalizado se "Outro" for selecionado
+        const genderSelect = document.getElementById('gender');
+        const customGenderBox = document.getElementById('custom-gender');
+
+        genderSelect.addEventListener('change', function() {
+            if (this.value === 'other') {
+                customGenderBox.style.display = 'block';
+            } else {
+                customGenderBox.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

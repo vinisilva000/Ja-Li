@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@100;300;400;500;700;900&display=swap');
+body {
+    font: normal 16px 'Roboto Condensed', sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Esconde o conteúdo que está fora da tela inicialmente */
+}
+
+/* Definindo a animação de subida */
+@keyframes subir {
+    0% {
+        opacity: 0; /* Transparente no início */
+        transform: translateY(100px); /* Começa 100px para baixo */
+    }
+    100% {
+        opacity: 1; /* Fica visível */
+        transform: translateY(0); /* Volta para a posição original */
+    }
+}
+
+/* Animação para o fundo e a imagem da mulher */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../blob-scene-haikei.png); /* Plano de fundo */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -2; /* Coloca o fundo atrás de tudo */
+    opacity: 0;
+    animation: subir 1.8s ease-out forwards;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100%;
+    background-image: url(../undraw_bibliophile_re_xarc.svg); /* Imagem da mulher */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left center;
+    z-index: -1; /* Coloca a imagem da mulher atrás do conteúdo, mas à frente do fundo */
+    opacity: 0;
+    animation: subir 1.5s ease-out forwards;
+    animation-delay: 0.5s; /* Atraso para a mulher aparecer depois */
+}
+
+h1, h2 {
+    position: relative; /* Coloca o h1 e h2 à frente de tudo */
+    z-index: 1;
+    animation: subir 1.5s ease-out forwards; /* Aplica a animação */
+    opacity: 0; /* Inicialmente invisível até a animação começar */
+    text-align: center; /* Centraliza os textos */
+}
+
+/* Diferentes tempos de animação para os títulos */
+h1 {
+    font-size: 36px;
+    color: rgb(255, 192, 19, 1);
+    text-shadow: 2px 2px 3px;
+    margin: 3px;
+    animation-delay: 0.2s; /* Atrasa a animação do título */
+}
+
+h2 {
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.932);
+    margin: 4px;
+    animation-delay: 0.5s; /* Atrasa a animação do subtítulo */
+}
+
+.email {
+    position: relative; /* Coloca o formulário à frente de tudo */
+    z-index: 1;
+    animation: subir 1.5s ease-out forwards; /* Aplica a animação de subida para o formulário */
+    animation-delay: 0.8s; /* Atrasa a animação do formulário */
+    background-color: rgba(252, 171, 9, 0.911);
+    padding: 59px;
+    border-radius: 29px;
+    box-shadow: 0 13px 20px;
+    width: 305px;
+    opacity: 0; /* Inicialmente invisível */
+}
+
+input[type="text"],input[type="password"]{
+    border:3px solid black;
+    padding: 8px;
+    border-radius: 8px;
+    width: 290px;
+    margin: 5px; /*separa o login/senha*/
+}
+input[type="text"]:focus,input[type="password"]:focus{
+    border-color: rgb(255, 192, 19, 1);
+    box-shadow: 0 4px 10px black;
+    outline: none;
+}
+button{
+    background-color: rgb(0, 0, 0);
+    color: rgb(252, 252, 252);
+    padding: 11px 10px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 45%;
+    margin-top: 5px;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+button:hover{
+    background-color: rgb(255, 192, 19, 1);
+   padding: 13px;
+}
